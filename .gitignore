@@ -1,0 +1,38 @@
+﻿# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Model files (too large for GitHub)
+models/base/
+models/fine-tuned/
+models/merged/
+models/gguf/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Cache
+.cache/
+*.cache
+
+# Data files (if large)
+data/training/*.json
+data/feedback/*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

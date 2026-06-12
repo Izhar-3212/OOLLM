@@ -1,0 +1,31 @@
+model:
+  base_model: "./models/base"
+  output_dir: "./models/fine-tuned"
+  gguf_dir: "./models/gguf"
+training:
+  lora_r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "v_proj"]
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  num_epochs: 5
+  max_seq_length: 512
+  warmup_steps: 10
+  logging_steps: 10
+  save_steps: 100
+  fp16: false
+  bf16: false
+  no_cuda: true
+  num_workers: 0
+data:
+  raw_dir: "./data/raw"
+  processed_dir: "./data/processed"
+  training_dir: "./data/training"
+  test_split: 0.1
+inference:
+  gguf_file: "tinyllama-chatbot-Q4_K_M.gguf"
+  n_ctx: 512
+  n_threads: 8
+  n_gpu_layers: 0
