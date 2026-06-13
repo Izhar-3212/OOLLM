@@ -3,16 +3,17 @@ model:
   output_dir: "./models/fine-tuned"
   gguf_dir: "./models/gguf"
 training:
-  lora_r: 8
+  dataset_path: "./data/training/agile_v2_dataset"
+  lora_r: 16
   lora_alpha: 32
   lora_dropout: 0.1
-  target_modules: ["q_proj", "v_proj"]
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
   batch_size: 2
   gradient_accumulation_steps: 4
   learning_rate: 2.0e-4
-  num_epochs: 5
-  max_seq_length: 512
-  warmup_steps: 10
+  num_epochs: 3
+  max_seq_length: 1024
+  warmup_steps: 20
   logging_steps: 10
   save_steps: 100
   fp16: false

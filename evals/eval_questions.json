@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "category": "Scrum Basics",
+    "question": "What is Scrum?",
+    "expected_keywords": ["lightweight framework", "empiricism", "iterative", "value"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "category": "Scrum Values",
+    "question": "What are the five Scrum values?",
+    "expected_keywords": ["commitment", "courage", "focus", "openness", "respect"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "category": "Scrum Events",
+    "question": "What is the purpose of the Daily Scrum?",
+    "expected_keywords": ["15 minutes", "inspect progress", "sprint goal", "adapt", "plan"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "category": "Kanban Metrics",
+    "question": "What is the difference between Lead Time and Cycle Time?",
+    "expected_keywords": ["lead time", "cycle time", "commitment", "delivery", "start"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "category": "Estimation",
+    "question": "How does Planning Poker work?",
+    "expected_keywords": ["consensus", "fibonacci", "simultaneous", "discussion", "reveal"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "category": "Agile Principles",
+    "question": "What are the four values of the Agile Manifesto?",
+    "expected_keywords": ["individuals", "interactions", "working software", "customer collaboration", "responding to change"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "category": "Kanban Practices",
+    "question": "What are WIP limits and why are they important?",
+    "expected_keywords": ["work in progress", "limit", "multitasking", "bottleneck", "flow"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "category": "Scrum Artifacts",
+    "question": "What is the Definition of Done?",
+    "expected_keywords": ["quality", "standard", "transparent", "increment", "complete"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "category": "Anti-Patterns",
+    "question": "What is a common anti-pattern for the Sprint Retrospective?",
+    "expected_keywords": ["action", "improvement", "continuous", "no action", "waste"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "category": "Velocity",
+    "question": "How do you calculate velocity in Scrum?",
+    "expected_keywords": ["story points", "completed", "average", "sprint", "planning"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 11,
+    "category": "User Stories",
+    "question": "What is the INVEST criteria for user stories?",
+    "expected_keywords": ["independent", "negotiable", "valuable", "estimable", "small", "testable"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 12,
+    "category": "User Stories",
+    "question": "What is the standard format of a user story?",
+    "expected_keywords": ["as a", "i want", "so that", "benefit"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 13,
+    "category": "User Stories",
+    "question": "What are acceptance criteria?",
+    "expected_keywords": ["testable", "conditions", "given", "user story"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 14,
+    "category": "User Stories",
+    "question": "How do you split a large user story?",
+    "expected_keywords": ["workflow", "business rule", "edge cases", "valuable"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 15,
+    "category": "Scrum Artifacts",
+    "question": "What is the Definition of Ready?",
+    "expected_keywords": ["acceptance criteria", "estimated", "dependencies", "sprint"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 16,
+    "category": "Agile Metrics",
+    "question": "What is a burn-down chart?",
+    "expected_keywords": ["remaining", "ideal", "actual", "behind"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 17,
+    "category": "Agile Metrics",
+    "question": "What is the difference between a burn-down chart and a burn-up chart?",
+    "expected_keywords": ["scope", "completed", "remaining", "visible"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 18,
+    "category": "Agile Metrics",
+    "question": "What is a cumulative flow diagram?",
+    "expected_keywords": ["area chart", "bands", "bottleneck", "work in progress"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 19,
+    "category": "Kanban Metrics",
+    "question": "What is Little's Law?",
+    "expected_keywords": ["cycle time", "work in progress", "throughput", "average"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 20,
+    "category": "Kanban Metrics",
+    "question": "What is flow efficiency?",
+    "expected_keywords": ["active", "lead time", "waiting", "percentage"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 21,
+    "category": "Retrospectives",
+    "question": "What are some popular retrospective formats?",
+    "expected_keywords": ["start", "stop", "continue", "sailboat"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 22,
+    "category": "Retrospectives",
+    "question": "What is the Prime Directive in retrospectives?",
+    "expected_keywords": ["best job", "psychological safety", "blame"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 23,
+    "category": "Engineering Practices",
+    "question": "What is test-driven development?",
+    "expected_keywords": ["failing test", "red", "green", "refactor", "before"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 24,
+    "category": "Engineering Practices",
+    "question": "What is continuous integration?",
+    "expected_keywords": ["automated", "build", "daily", "feedback"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 25,
+    "category": "Engineering Practices",
+    "question": "What is technical debt and how do teams manage it?",
+    "expected_keywords": ["rework", "refactoring", "backlog", "definition of done"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 26,
+    "category": "Engineering Practices",
+    "question": "What is a minimum viable product?",
+    "expected_keywords": ["smallest", "value", "learning", "assumptions"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 27,
+    "category": "Engineering Practices",
+    "question": "What is a spike in Agile?",
+    "expected_keywords": ["timeboxed", "research", "uncertainty", "knowledge"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 28,
+    "category": "Scaling Agile",
+    "question": "What is Scrumban?",
+    "expected_keywords": ["hybrid", "kanban", "wip limits", "flow"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 29,
+    "category": "Scaling Agile",
+    "question": "What is a Scrum of Scrums?",
+    "expected_keywords": ["multiple", "representative", "dependencies", "impediments"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 30,
+    "category": "Scaling Agile",
+    "question": "What is SAFe (Scaled Agile Framework)?",
+    "expected_keywords": ["scaled agile framework", "agile release train", "pi planning", "portfolio"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 31,
+    "category": "Abbreviations",
+    "question": "What is WIP and why limit it?",
+    "expected_keywords": ["work in progress", "multitasking", "bottleneck", "flow"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 32,
+    "category": "Abbreviations",
+    "question": "What's the DoD?",
+    "expected_keywords": ["quality", "standard", "increment", "complete"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 33,
+    "category": "Abbreviations",
+    "question": "How does CI work?",
+    "expected_keywords": ["automated", "build", "daily", "feedback"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 34,
+    "category": "Abbreviations",
+    "question": "Explain TDD.",
+    "expected_keywords": ["failing test", "red", "green", "refactor", "before"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 35,
+    "category": "Abbreviations",
+    "question": "What is an MVP?",
+    "expected_keywords": ["smallest", "value", "learning", "assumptions"],
+    "difficulty": "medium"
+  }
+]

@@ -36,3 +36,23 @@ Thumbs.db
 
 # Logs
 *.log
+pipeline_log.txt
+pipeline_err.txt
+run_log.txt
+run_err.txt
+evals/run_log.txt
+evals/run_err.txt
+
+# Local model backup (transient, regenerable by retraining)
+models/fine-tuned-v1-backup/
+
+# HuggingFace dataset caches (regenerable via scripts/15_prepare_data_v2.py)
+data/training/*/
+*.arrow
+
+# Build artifacts (regenerable from knowledge/*.md via the 11_* build scripts)
+knowledge_base.json
+
+# Eval run outputs (keep evals/eval_questions.json under version control)
+evals/eval_results_*.json
+evals/score_report_*.json
