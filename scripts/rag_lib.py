@@ -16,9 +16,19 @@ mean the same Agile concept; if any one appears in the query, all of them are
 added to the search. Keep groups genuinely equivalent -- loose synonyms pull in
 irrelevant chunks.
 """
+import os
 import re
 
+import yaml
+
 TOKEN_RE = re.compile(r"\w+")
+
+
+def load_config():
+    """Load config.yaml from the project root (parent of scripts/), CWD-independent."""
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(os.path.join(root, "config.yaml"), encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 # Each inner list = surface forms of one Agile concept (abbreviations + synonyms).
 SYNONYM_GROUPS = [

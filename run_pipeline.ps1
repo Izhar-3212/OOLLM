@@ -17,6 +17,6 @@ function Run-Step($name, $script) {
 Run-Step "Train LoRA v2"   "scripts/03_train_lora.py"
 Run-Step "Merge model"     "scripts/04_merge_model.py"
 Run-Step "Run evals (30q)" "scripts/13_run_evals.py"
-Run-Step "Score evals"     "scripts/14_score_evals_v2.py"
+Run-Step "Score evals"     "scripts/14_score_evals_v3.py"
 
 Write-Output "PIPELINE COMPLETE ($(Get-Date -Format 'HH:mm:ss'))"

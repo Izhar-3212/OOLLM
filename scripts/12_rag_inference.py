@@ -13,9 +13,11 @@ import rag_lib
 PRINT_PREFIX = "[RAG] "
 TOKEN_RE = re.compile(r"\b[\w'-]+\b")
 
+CFG = rag_lib.load_config()
+INF = CFG["inference"]
 # Minimum top cosine similarity for retrieval to count as relevant (TF-IDF, 0-1).
 # Below this, the query found nothing useful -> friendly fallback, no hallucination.
-RELEVANCE_THRESHOLD = 0.15
+RELEVANCE_THRESHOLD = INF["relevance_threshold_tfidf"]
 
 
 def tokenize(text: str) -> list[str]:
@@ -56,13 +58,13 @@ def load_llm():
     llm_model.config.pad_token_id = llm_tokenizer.eos_token_id
 
     gen_config = llm_model.generation_config
-    gen_config.max_new_tokens = 150
+    gen_config.max_new_tokens = INF["max_new_tokens"]
     gen_config.max_length = None
-    gen_config.temperature = 0.7
-    gen_config.top_p = 0.95
-    gen_config.top_k = 50
-    gen_config.do_sample = True
-    gen_config.repetition_penalty = 1.05
+    gen_config.temperature = INF["temperature"]
+    gen_config.top_p = INF["top_p"]
+    gen_config.top_k = INF["top_k"]
+    gen_config.do_sample = INF["do_sample"]
+    gen_config.repetition_penalty = INF["repetition_penalty"]
 
     print("Mini Me ready!", flush=True)
     return llm_tokenizer, llm_model, gen_config
@@ -76,7 +78,9 @@ def get_embedding(text):
     # Synonym-expand the query so abbreviations/synonyms match KB wording.
     return build_bow_vector(rag_lib.expand_query_text(text), vocab, idf).unsqueeze(0)
 
-def search_knowledge_base(query, top_k=3):
+def search_knowledge_base(query, top_k=None):
+    if top_k is None:
+        top_k = INF["retrieval_top_k"]
     query_emb = get_embedding(query)
     # Calculate cosine similarity between the query vector and saved chunk embeddings.
     similarities = F.cosine_similarity(query_emb, db_embeddings, dim=1)

@@ -11,6 +11,13 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rag_lib
 
+# A/B toggle: set EXPAND_QUERY=0 to disable query expansion in retrieval.
+EXPAND_QUERY = os.environ.get("EXPAND_QUERY", "1") != "0"
+print(f"[A/B] Query expansion: {'ON' if EXPAND_QUERY else 'OFF'}", flush=True)
+
+CFG = rag_lib.load_config()
+EVAL = CFG["eval"]
+
 # Silence Hugging Face warnings
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 import logging
@@ -46,9 +53,12 @@ print(f"✓ Loaded {len(eval_questions)} questions", flush=True)
 def tokenize(text):
     return re.findall(r'\w+', text.lower())
 
-def search_knowledge_base(query, top_k=5):
-    # Synonym-expanded query so differently-phrased questions still match.
-    scores = bm25.get_scores(rag_lib.expand_query(query))
+def search_knowledge_base(query, top_k=None):
+    if top_k is None:
+        top_k = EVAL["retrieval_top_k"]
+    # A=plain query, B=synonym-expanded (controlled by EXPAND_QUERY env var).
+    q_tokens = rag_lib.expand_query(query) if EXPAND_QUERY else rag_lib.tokenize(query)
+    scores = bm25.get_scores(q_tokens)
     top_indices = sorted(range(len(scores)), key=lambda i: scores[i])[-top_k:]
     top_indices.reverse()
     return [docs[i]["text"] for i in top_indices]
@@ -73,8 +83,8 @@ def get_answer(question):
     with torch.no_grad():
         outputs = llm_model.generate(
             **inputs,
-            max_new_tokens=200,
-            do_sample=False,
+            max_new_tokens=EVAL["max_new_tokens"],
+            do_sample=EVAL["do_sample"],
             pad_token_id=llm_tokenizer.eos_token_id
         )
 
@@ -115,4 +125,4 @@ with open(output_file, "w", encoding="utf-8") as f:
 print("\n" + "="*60)
 print(f"✅ Evaluation complete! Results saved to: {output_file}")
 print("="*60)
-print(f"\nNext step: Run scripts/14_score_evals_v2.py to see the scores!")
+print(f"\nNext step: Run scripts/14_score_evals_v3.py to see the scores!")

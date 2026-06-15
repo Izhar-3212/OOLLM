@@ -1,0 +1,20 @@
+FROM ./models/merged
+
+# TinyLlama chat format - matches what the model was fine-tuned on.
+TEMPLATE """{{ if .System }}<|system|>
+{{ .System }}</s>
+{{ end }}<|user|>
+{{ .Prompt }}</s>
+<|assistant|>
+"""
+
+PARAMETER stop "</s>"
+PARAMETER stop "<|user|>"
+PARAMETER stop "<|system|>"
+
+# Generation defaults (kept in sync with config.yaml inference section).
+PARAMETER temperature 0.7
+PARAMETER top_p 0.95
+PARAMETER top_k 50
+PARAMETER repeat_penalty 1.05
+PARAMETER num_predict 150

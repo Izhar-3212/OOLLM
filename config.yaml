@@ -26,7 +26,27 @@ data:
   training_dir: "./data/training"
   test_split: 0.1
 inference:
+  # Chat generation (TinyLlama via transformers; sampled for natural responses)
+  max_new_tokens: 150
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 50
+  do_sample: true
+  repetition_penalty: 1.05
+  # Retrieval
+  retrieval_top_k: 3
+  relevance_threshold_tfidf: 0.15   # TF-IDF cosine 0-1 (12_rag_inference.py)
+  relevance_threshold_bm25: 5.0     # BM25 score, unbounded (12_rag_inference_ollama.py)
+  # Ollama backend (your fine-tuned TinyLlama, Q8_0 quantized - matches fp16 quality, ~4x faster)
+  ollama_model: "mini-me-q8"
+  ollama_num_predict: 200
+  # GGUF backend (llama.cpp; not used by the transformers chat path)
   gguf_file: "tinyllama-chatbot-Q4_K_M.gguf"
   n_ctx: 512
   n_threads: 8
   n_gpu_layers: 0
+eval:
+  # Greedy + deterministic for reproducible scoring (intentionally differs from chat).
+  max_new_tokens: 200
+  do_sample: false
+  retrieval_top_k: 5
