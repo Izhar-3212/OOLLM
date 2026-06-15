@@ -28,7 +28,7 @@ import rag_lib
 
 CFG = rag_lib.load_config()
 EVAL = CFG["eval"]
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mini-me")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", CFG["inference"]["ollama_model"])
 EXPAND_QUERY = os.environ.get("EXPAND_QUERY", "1") != "0"
 OLLAMA_URL = "http://localhost:11434/api/generate"
 

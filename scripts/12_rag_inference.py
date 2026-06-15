@@ -127,7 +127,7 @@ def chat_with_mini_me(user_input):
 
 def main():
     print("\n" + "="*60)
-    print("🤖 Mini Me RAG is ready! (Type 'quit' to exit)")
+    print("🤖 I am Mini Me trained by Izhar! (Type 'quit' to exit)")
     print("="*60 + "\n")
 
     while True:

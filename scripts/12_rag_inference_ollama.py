@@ -86,7 +86,7 @@ def chat_with_mini_me(user_input):
 
 # Main Loop
 print("\n" + "="*60)
-print(f"🤖 Mini Me is ready! [{INF['ollama_model']} via Ollama] (Type 'quit' to exit)")
+print(f"🤖 I am Mini Me trained by Izhar! [{INF['ollama_model']} via Ollama] (Type 'quit' to exit)")
 print("="*60 + "\n")
 
 while True:
